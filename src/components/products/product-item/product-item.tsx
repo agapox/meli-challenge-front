@@ -4,6 +4,7 @@ import { ItemOfItems } from '../../../interfaces/items.interface';
 import ProductCondition from '../product-condition/product-condition';
 import formatNumber from '../../../utilities/formatNumber';
 import ProductLike from '../product-like/product-like';
+import ProductFreeShipping from '../product-free-shipping/product-free-shipping';
 
 const ProductItem = () => {
 
@@ -20,7 +21,7 @@ const ProductItem = () => {
                 </div>
                 <div>
                     <p className="title">{ product.title }</p>
-                    { product.free_shipping && <p className="free-shipping">Envío gratis</p> }
+                    <ProductFreeShipping freeShipping={product.free_shipping} />
                 </div>
             </div>
             <div className="like">
