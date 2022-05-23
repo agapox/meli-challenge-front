@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import './header.css'
 
 const Header = () => {
+  const [searchItem, setSearchItem] = useState<string>("");
+  const navitage = useNavigate()
+  const [searchParams] = useSearchParams()
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (searchItem !== '' && (searchItem !== searchParams.get('q'))) {
+      navitage("search?" + new URLSearchParams([['q', searchItem]]));
+    }
+  }
+
   return (
     <header>
       <div className="container">
@@ -11,12 +23,12 @@ const Header = () => {
           </Link>
         </div>
         <div className="search-bar col">
-          <form className="nav-search" action="https://www.mercadolibre.cl/jm/search" method="GET" role="search">
+          <form className="nav-search" role="search" onSubmit={handleSubmit}>
             <input
               type="text"
               className="nav-search-input"
               aria-label="Ingresa lo que quieras encontrar"
-              name="as_word"
+              name="q"
               placeholder="Buscar productos, marcas y más…"
               maxLength={120}
               autoFocus
@@ -24,8 +36,8 @@ const Header = () => {
               autoCorrect="off"
               spellCheck={false}
               autoComplete="off"
-              value=""
-              onChange={(ev) => console.log(ev.target.value)}
+              value={searchItem}
+              onChange={(ev) => setSearchItem(ev.target.value)}
               aria-activedescendant=""
               aria-controls="cb1-list"
               aria-autocomplete="list"
