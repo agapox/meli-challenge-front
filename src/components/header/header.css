@@ -1,6 +1,8 @@
 header {
     width: 100%;
     background-color: #fff159;
+    height: 70px;
+    display: flex;
 }
 
 header .container {
