@@ -1,0 +1,34 @@
+.andes-breadcrumb {
+    font-size: 14px;
+    list-style-type: none;
+    display: block;;
+    padding-inline-start: 0px;
+}
+
+.andes-breadcrumb .andes-breadcrumb__item {
+    display: inline-block;
+    color: #727272;
+}
+
+.andes-breadcrumb .andes-breadcrumb__item a {
+    color: #727272;
+    text-decoration: none;
+}
+
+.andes-breadcrumb .andes-breadcrumb__item a:hover {
+    color: #0c3172;
+}
+
+.andes-breadcrumb .andes-breadcrumb__item span {
+    margin-left: 1ch;
+    margin-right: 1ch;
+}
+
+.andes-breadcrumb .andes-breadcrumb__chevron:first {
+    display: none;
+}
+
+.andes-breadcrumb .andes-breadcrumb__chevron {
+    float: left;
+    padding: 0 6px;
+}
