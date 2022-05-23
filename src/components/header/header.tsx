@@ -7,6 +7,15 @@ const Header = () => {
   const navitage = useNavigate()
   const [searchParams] = useSearchParams()
 
+  const textPattern = "^[a-z,A-Z,0-9,' ']+$";
+  const textRegex = new RegExp(textPattern);
+
+  const handleChange = (val: string) => {
+    if (textRegex.test(val) || val === '') {
+      setSearchItem(val)
+    }
+  }
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (searchItem !== '' && (searchItem !== searchParams.get('q'))) {
@@ -37,7 +46,7 @@ const Header = () => {
               spellCheck={false}
               autoComplete="off"
               value={searchItem}
-              onChange={(ev) => setSearchItem(ev.target.value)}
+              onChange={(ev) => handleChange(ev.target.value)}
               aria-activedescendant=""
               aria-controls="cb1-list"
               aria-autocomplete="list"
