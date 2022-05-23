@@ -1,7 +1,9 @@
-a.fav {
+button.fav {
+    border: 0;
     cursor: pointer;
+    background-color: transparent;
 }
 
-a.fav .fa-heart {
+button.fav .fa-heart {
     color: #3483fa;
 }

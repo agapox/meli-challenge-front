@@ -7,10 +7,10 @@ const ProductLike = () => {
         setToggle(!toggle);
     }
     return (
-        <a className="fav" onClick={toggleHeart}>
+        <button className="fav" onClick={toggleHeart}>
             <i
-                className={ toggle ? 'fa-solid fa-heart' : 'fa-regular fa-heart' }></i>
-        </a>
+                className={ toggle ? 'fa-solid fa-heart fa-lg' : 'fa-regular fa-heart fa-lg' }></i>
+        </button>
     )
 }
 
