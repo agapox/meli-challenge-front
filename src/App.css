@@ -10,16 +10,24 @@
     padding-right: 2rem;
 }
 
-main .ui-search {
+main {
     min-height: calc(100vh - 70px);
+}
+
+main .ui-search {
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,.1);
 }
 
-.page-not-found {
+main .container.no-search {
+    padding-top: .5rem;
+}
+
+main .ui-search.page-not-found {
     padding: 3rem 2rem;
     text-align: center;
+    background-color: #ffffff;
 }
 
 .products-list ol {
