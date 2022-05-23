@@ -4,7 +4,33 @@
 
 .container {
     max-width: 1440px;
+    width: calc(100% - 4rem);
     margin: auto;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+main .ui-search {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,.1);
+}
+
+.products-list ol {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.products-list ol li {
+    list-style: none;
+}
+
+.products-list ol li:first-child .andes-card {
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.products-list ol li:last-child .andes-card {
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
 }
