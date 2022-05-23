@@ -1,0 +1,18 @@
+.condition {
+    display: inline-block;
+    border-radius: 500px;
+    font-size: 12px;
+    padding: 4px 8px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    vertical-align: super;
+}
+
+.condition.new {
+    background-color: #00a650;
+}
+
+.condition.used {
+    background-color: #b8aa2b;
+}
