@@ -17,6 +17,11 @@ main .ui-search {
     background-color: rgba(0,0,0,.1);
 }
 
+.page-not-found {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
 .products-list ol {
     list-style-type: none;
     padding-inline-start: 0px;
