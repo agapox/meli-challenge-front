@@ -1,0 +1,69 @@
+header {
+    width: 100%;
+    background-color: #fff159;
+}
+
+header .container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+}
+
+header .container .col {
+    display: inline-block;
+}
+
+header .container .logo {
+    width: 50px;
+}
+
+header .container .logo img {
+    max-width: 100%;
+}
+
+header .container .search-bar {
+    left: 35px;
+    width: 100%;
+}
+
+header .container .search-bar .nav-search {
+    max-width: 600px;
+    background-color: #ffffff;
+    padding-left: 8px;
+    margin-left: 32px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+header .container .search-bar .nav-search, header .container .search-bar input {
+    width: 100%;
+}
+
+header .container .search-bar input {
+    width: calc(100% - 45px);
+    height: 39px;
+    border: 0;
+    font-size: 16px;
+}
+
+header .container .search-bar input:focus, header .container .search-bar input:focus-visible {
+    border: 0;
+    outline: 0;
+}
+
+header .container .vertical-divider {
+    border-left: 1px solid #e6e6e6;
+    height: 26px;
+    width: 1px;
+    display: inline;
+}
+
+header .container .search-bar button {
+    width: 40px;
+    height: 39px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
