@@ -1,0 +1,7 @@
+a.fav {
+    cursor: pointer;
+}
+
+a.fav .fa-heart {
+    color: #3483fa;
+}
