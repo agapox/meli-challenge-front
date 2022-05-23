@@ -45,25 +45,7 @@
 
 .andes-card .ui-search-result__content-wrapper .price {
     font-size: 24px;
-}
-
-.andes-card .ui-search-result__content-wrapper .condition {
-    display: inline-block;
-    border-radius: 500px;
-    margin-left: 16px;
-    font-size: 12px;
-    padding: 4px 8px;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-    vertical-align: super;
-}
-
-.andes-card .ui-search-result__content-wrapper .condition.new {
-    background-color: #00a650;
-}
-.andes-card .ui-search-result__content-wrapper .condition.used {
-    background-color: #b8aa2b;
+    margin-right: 16px;
 }
 
 .andes-card .ui-search-result__content-wrapper .title {
@@ -73,15 +55,6 @@
     line-height: 1.3;
 }
 
-.andes-card .ui-search-result__content-wrapper .free-shipping {
-    color: #00a650;
-    font-weight: bold;
-}
-
 .andes-card .like {
     text-align: right;
-}
-
-.andes-card .like .fa-heart {
-    color: #3483fa;
 }

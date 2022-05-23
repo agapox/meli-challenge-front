@@ -1,6 +1,7 @@
 import './product-item.css';
 import item from './item.json';
 import { ItemOfItems } from '../../../interfaces/items.interface';
+import ProductCondition from '../product-condition/product-condition';
 
 const ProductItem = () => {
 
@@ -13,11 +14,7 @@ const ProductItem = () => {
             <div className="ui-search-result__content-wrapper">
                 <div>
                     <span className="price">$ { product.price.amount }</span>
-                    {
-                        product.condition === 'new' ? <span 
-                            className="condition new">Nuevo</span> : <span 
-                            className="condition used">Usado</span>
-                    }
+                    <ProductCondition condition={'new'} />
                 </div>
                 <div>
                     <p className="title">{ product.title }</p>
