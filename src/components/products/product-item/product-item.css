@@ -58,3 +58,24 @@
 .andes-card .like {
     text-align: right;
 }
+
+.products-list a:-webkit-any-link {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 576px) {
+    .andes-card {
+        padding: 16px;
+        flex-direction: column;
+    }
+
+    .andes-card .ui-search-result__image {
+        margin: 0 auto;
+    }
+    .andes-card .ui-search-result__content-wrapper {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+}

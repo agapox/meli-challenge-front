@@ -30,6 +30,7 @@ header .container .logo img {
 header .container .search-bar {
     left: 35px;
     width: 100%;
+    display: inline-flex;
 }
 
 header .container .search-bar .nav-search {

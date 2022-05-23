@@ -5,12 +5,13 @@
 .container {
     max-width: 1440px;
     width: calc(100% - 4rem);
-    margin: auto;
+    margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
 }
 
 main .ui-search {
+    min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,.1);
