@@ -5,6 +5,7 @@ import ProductCondition from '../product-condition/product-condition';
 import formatNumber from '../../../utilities/formatNumber';
 import ProductLike from '../product-like/product-like';
 import ProductFreeShipping from '../product-free-shipping/product-free-shipping';
+import { Link } from 'react-router-dom';
 
 const ProductItem = () => {
 
@@ -12,7 +13,9 @@ const ProductItem = () => {
     return (
         <div className="andes-card">
             <div className="ui-search-result__image">
-                <img src={product.picture} alt={product.title} />
+                <Link to={'/items/' + product.id}>
+                    <img src={product.picture} alt={product.title} />
+                </Link>
             </div>
             <div className="ui-search-result__content-wrapper">
                 <div>
@@ -20,7 +23,9 @@ const ProductItem = () => {
                     <ProductCondition condition={'new'} />
                 </div>
                 <div>
-                    <p className="title">{ product.title }</p>
+                    <Link to={'/items/' + product.id}>
+                        <p className="title">{ product.title }</p>
+                    </Link>
                     <ProductFreeShipping freeShipping={product.free_shipping} />
                 </div>
             </div>

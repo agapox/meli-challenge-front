@@ -1,3 +1,5 @@
+import { useParams } from 'react-router-dom';
+
 import ProductLike from '../product-like/product-like';
 import './product-details.css';
 import ProductFreeShipping from '../product-free-shipping/product-free-shipping';
@@ -6,6 +8,8 @@ import formatNumber from '../../../utilities/formatNumber';
 
 const ProductDetails = () => {
     const freeShipping = true;
+    const { itemId } = useParams();
+
     return (
         <div className="product-details">
             <div className="product-details__one">
@@ -19,7 +23,7 @@ const ProductDetails = () => {
                             <ProductLike />
                         </div>
                     </div>
-                    <h1 className="product-details__info__name">Product Name</h1>
+                    <h1 className="product-details__info__name">Product Name - {itemId}</h1>
                     <p className="sells"><span>{formatNumber(1232)}</span> vendidos</p>
                     <p className="product-details__info__price">${formatNumber(12365156)}</p>
                     <ProductFreeShipping freeShipping={freeShipping}/>
