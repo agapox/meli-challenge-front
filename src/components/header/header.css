@@ -3,6 +3,7 @@ header {
     background-color: #fff159;
     height: 70px;
     display: flex;
+    align-items: center;
 }
 
 header .container {
@@ -17,10 +18,13 @@ header .container .col {
 
 header .container .logo {
     width: 50px;
+    display: inline-flex;
+    align-items: center;
 }
 
 header .container .logo img {
     max-width: 100%;
+    display: flex;
 }
 
 header .container .search-bar {

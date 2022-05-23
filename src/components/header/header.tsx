@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './header.css'
 
 const Header = () => {
   return (
     <header>
       <div className="container">
-        <div className="logo col"><img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__small@2x.png" alt="Meli Logo" /></div>
+        <div className="logo col">
+          <Link to="/">
+            <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__small@2x.png" alt="Meli Logo" />
+          </Link>
+        </div>
         <div className="search-bar col">
           <form className="nav-search" action="https://www.mercadolibre.cl/jm/search" method="GET" role="search">
             <input
