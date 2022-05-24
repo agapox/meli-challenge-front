@@ -21,7 +21,6 @@ const ProductsProvider = ({children}: any) => {
                     q: term
                 }
             })
-            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error(error);
@@ -45,7 +44,6 @@ const ProductsProvider = ({children}: any) => {
         const endpoint = API_URL + API_ENDPOINT + id
         try {
             const response = await axios.get(endpoint)
-            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error(error);
