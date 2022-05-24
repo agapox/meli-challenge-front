@@ -6,7 +6,7 @@ const ProductDetailsView = () => {
         <div className="ui-search">
             <div className="container">
             <section>
-                <Breadcrumbs />
+                <Breadcrumbs categories={[]}/>
             </section>
             <section>
                 <ProductDetails />

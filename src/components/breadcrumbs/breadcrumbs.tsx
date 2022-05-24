@@ -1,19 +1,24 @@
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import './breadcrumbs.css';
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({categories}: {categories: string[]}) => {
 
-    const breadcrumbs: string[] = ['breadcrumb1', 'breadcrumb2', 'breadcrumb3', 'breadcrumb4']
+    const [searchParams] = useSearchParams()
+    const isDetailsProductView = typeof(searchParams.get('q')) !== 'string'
+    const navigate = useNavigate();
 
     return (
         <ol className="andes-breadcrumb">
-            <li className="andes-breadcrumb__item">
-                <a href="#" target="_parent">
-                    Volver al listado
-                </a>
-                <span>|</span>
-            </li>
             {
-                breadcrumbs.map((breadcrumbName: string, i: number) => (
+                isDetailsProductView && <li className="andes-breadcrumb__item">
+                    <button onClick={() => navigate(-1)}>
+                        Volver al listado
+                    </button>
+                    <span>|</span>
+                </li>
+            }
+            {
+                categories.map((breadcrumbName: string, i: number) => (
                     <li className="andes-breadcrumb__item" key={breadcrumbName}>
                         { breadcrumbName }
                         { 

@@ -1,5 +1,4 @@
 import './product-item.css';
-import item from './item.json';
 import { ItemOfItems } from '../../../interfaces/items.interface';
 import ProductCondition from '../product-condition/product-condition';
 import formatNumber from '../../../utilities/formatNumber';
@@ -7,9 +6,8 @@ import ProductLike from '../product-like/product-like';
 import ProductFreeShipping from '../product-free-shipping/product-free-shipping';
 import { Link } from 'react-router-dom';
 
-const ProductItem = () => {
+const ProductItem = ({product}:{product: ItemOfItems}) => {
 
-    const product: ItemOfItems = item;
     return (
         <div className="andes-card">
             <div className="ui-search-result__image">

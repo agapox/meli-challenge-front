@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { ProductsContext } from '../../context/productsContext';
 import './header.css'
 
 const Header = () => {
   const [searchItem, setSearchItem] = useState<string>("");
   const navitage = useNavigate()
   const [searchParams] = useSearchParams()
+
+  const productsContext = useContext(ProductsContext)
 
   const textPattern = "^[a-z,A-Z,0-9,' ']+$";
   const textRegex = new RegExp(textPattern);
@@ -20,6 +23,7 @@ const Header = () => {
     e.preventDefault()
     if (searchItem !== '' && (searchItem !== searchParams.get('q'))) {
       navitage("search?" + new URLSearchParams([['q', searchItem]]));
+      productsContext.setSearchTerm(searchItem)
     }
   }
 
