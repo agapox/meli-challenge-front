@@ -26,9 +26,13 @@
     margin-bottom: 8px;
 }
 
+.product-details .product-details__one .product-details__img {
+    margin: 0 2rem 2rem auto;
+}
+
 .product-details .product-details__one .product-details__img img {
-    max-width: 100%;
     width: 100%;
+    display: block;
 }
 
 .product-details .product-details__one .product-details__info .sells {
@@ -44,6 +48,7 @@
     -webkit-flex-shrink: 1;
     flex-shrink: 1;
     flex-grow: 2;
+    width: 100%;
 }
 
 .product-details .product-details__one .product-details__info .product-details__info__price {
@@ -102,6 +107,9 @@
     }
     .product-details .product-details__one .product-details__info button.andes-button {
         width: 100%;
+    }
+    .product-details .product-details__one .product-details__img {
+        margin: 0 auto 2rem auto;
     }
 }
 

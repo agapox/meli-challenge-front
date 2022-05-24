@@ -10,12 +10,15 @@
     color: #727272;
 }
 
-.andes-breadcrumb .andes-breadcrumb__item a {
+.andes-breadcrumb .andes-breadcrumb__item button {
     color: #727272;
-    text-decoration: none;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.andes-breadcrumb .andes-breadcrumb__item a:hover {
+.andes-breadcrumb .andes-breadcrumb__item button:hover {
     color: #0c3172;
 }
 

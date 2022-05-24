@@ -1,7 +1,6 @@
 import axios from "axios"
 import { createContext, useState } from "react"
 import { useSearchParams } from "react-router-dom"
-import { Item, Items } from "../interfaces/items.interface"
 
 export const ProductsContext = createContext<any>(undefined)
 const { Provider } = ProductsContext
@@ -11,8 +10,6 @@ const ProductsProvider = ({children}: any) => {
     const API_URL: string = "http://localhost:3001/";
     const API_ENDPOINT: string = "api/items/";
 
-    // const [productsList, setProductsList] = useState<Items | undefined>(undefined)
-    // const [productDetails, setProductDetails] = useState<Item | undefined>(undefined)
     const [term, setTerm] = useState<string | null>("");
     const [searchParams] = useSearchParams()
 
@@ -24,11 +21,11 @@ const ProductsProvider = ({children}: any) => {
                     q: term
                 }
             })
+            console.log(response.data)
             return response.data;
         } catch (error) {
             console.error(error);
         }
-        
     }
 
     const setSearchTerm = (newTerm: string) => {
@@ -44,13 +41,20 @@ const ProductsProvider = ({children}: any) => {
         return term;
     }
 
-    const getProductsDetails = () => {
-        
+    const getProductDetails = async(id:string) => {
+        const endpoint = API_URL + API_ENDPOINT + id
+        try {
+            const response = await axios.get(endpoint)
+            console.log(response.data)
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     const productMethods = {
         getProductsList,
-        getProductsDetails,
+        getProductDetails,
         setSearchTerm,
         getSearchTerm
     }
