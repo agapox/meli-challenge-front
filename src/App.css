@@ -10,14 +10,11 @@
     padding-right: 2rem;
 }
 
-main {
-    min-height: calc(100vh - 70px);
-}
-
 main .ui-search {
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0,.1);
+    min-height: calc(100vh - 70px);
 }
 
 main .container.no-search {

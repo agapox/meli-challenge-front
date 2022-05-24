@@ -1,34 +1,42 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './components/header/header';
-import PageNotFound from './views/404';
-import ProductListView from './views/product-list-view';
-import ProductDetailsView from './views/product-details-view';
-import ProductsProvider from './context/productsContext';
+import { Route, Routes } from "react-router-dom"
+import "./App.css"
+import Header from "./components/header/header"
+import PageNotFound from "./views/404"
+import ProductListView from "./views/product-list-view"
+import ProductDetailsView from "./views/product-details-view"
+import ProductsProvider from "./context/productsContext"
 
 const App = () => {
-  return (
-		<ProductsProvider>
-			<div className="App">
-				<Header />
-				<main id="main-container" role="main">
-					<Routes>
+    return (
+        <ProductsProvider>
+            <div className="App">
+                <Header />
+                <main id="main-container" role="main">
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <div className="container no-search">
+                                    <h4>
+                                        Busca tu producto en la barra de
+                                        búsqueda
+                                    </h4>
+                                </div>
+                            }
+                        />
 
-						<Route path="/" element={
-							<div className="container no-search">
-								<h4>Busca tu producto en la barra de búsqueda</h4>
-							</div>
-						} />
+                        <Route
+                            path="items/:itemId"
+                            element={<ProductDetailsView />}
+                        />
 
-						<Route path="items/:itemId" element={<ProductDetailsView />} />
-
-						<Route path="/search" element={<ProductListView />}/>
-						<Route path="*" element={<PageNotFound />} />
-					</Routes>
-				</main>
-			</div>
-		</ProductsProvider>
-  );
+                        <Route path="/search" element={<ProductListView />} />
+                        <Route path="*" element={<PageNotFound />} />
+                    </Routes>
+                </main>
+            </div>
+        </ProductsProvider>
+    )
 }
 
-export default App;
+export default App

@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import Breadcrumbs from "../components/breadcrumbs/breadcrumbs";
-import ProductItem from "../components/products/product-item/product-item";
-import { ProductsContext } from "../context/productsContext";
-import { Items } from "../interfaces/items.interface";
+import { useContext, useEffect, useState } from "react"
+import Breadcrumbs from "../components/breadcrumbs/breadcrumbs"
+import ProductItem from "../components/products/product-item/product-item"
+import { ProductsContext } from "../context/productsContext"
+import { Items } from "../interfaces/items.interface"
 
 const ProductListView = () => {
-
     const productsContext = useContext(ProductsContext)
 
     const [term, setTerm] = useState("")
@@ -23,32 +22,30 @@ const ProductListView = () => {
         }
         getNavTerm()
         getProducts()
-    },[term, productsContext])
+    }, [term, productsContext])
 
     return (
         <div className="ui-search">
             <div className="container">
-                {
-                    products?.categories && <section>
-                        <Breadcrumbs categories={products?.categories}/>
+                {products?.categories && (
+                    <section>
+                        <Breadcrumbs categories={products?.categories} />
                     </section>
-                }
-            {
-                true && <section className="products-list">
-                    <ol>
-                        {
-                            products?.items.map(product => (
+                )}
+                {products?.items && (
+                    <section className="products-list">
+                        <ol>
+                            {products?.items.map((product) => (
                                 <li key={product.id}>
                                     <ProductItem product={product} />
                                 </li>
-                            ))	
-                        }
-                    </ol>
-                </section>
-            }
+                            ))}
+                        </ol>
+                    </section>
+                )}
             </div>
         </div>
     )
 }
 
-export default ProductListView;
+export default ProductListView
